@@ -250,19 +250,58 @@
               ><img class="img-fluid" src="/img/image3.jpg"
             /></a>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="col-md-4">
-            <a
-              href="/img/laptop.png"
-              data-toggle="lightbox"
-              data-gallery="example-gallery"
-              ><img class="img-fluid" src="/img/image3.jpg"
-            /></a>
+    <!-- NEWSLETTER SECTION -->
+
+    <section id="newsletter" class="text-center p-5 bg-dark text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1>Sign Up For Our News Letter</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Aspernatur nam possimus ab, nihil officia earum ipsam velit sit ut
+              eligendi?
+            </p>
+          </div>
+
+          <div class="col-md-6">
+            <input
+              type="text"
+              class="form-control mb-2"
+              placeholder="Enter Name"
+            />
+          </div>
+          <div class="col-md-6">
+            <input
+              type="text"
+              class="form-control"
+              name="text"
+              id="floatingInput"
+              placeholder="Enter Your Email"
+            />
+          </div>
+          <div class="col-12 d-grid mt-2">
+            <button class="btn btn-primary mb-2 text-uppercase fw-bold">
+              Submit
+            </button>
           </div>
         </div>
       </div>
     </section>
 
+    <footer id="main-footer" class="text-center p-4">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <p>Copyright &copy; <span id="year"></span> Glozzom</p>
+          </div>
+        </div>
+      </div>
+    </footer>
     <!-- VIDEO MODAL -->
     <div
       class="modal fade"
@@ -328,10 +367,6 @@
         });
       }
 
-      function onPlayerReady(event) {
-        event.target.playVideo(); // autostart
-      }
-
       var done = false;
       function onPlayerStateChange(event) {
         if (event.data == YT.PlayerState.PLAYING && !done) {
@@ -339,10 +374,6 @@
           //setTimeout(stopVideo, 6000);
           //done = true;
         }
-      }
-
-      function stopVideo() {
-        player.stopVideo();
       }
 
       function loadYouTubeVideo() {
@@ -358,19 +389,12 @@
         // dynamically create video inside modal
         loadYouTubeVideo();
       });
-
-      // manual controls outside YT
-      var playBtn = document.getElementById("playBtn");
-      playBtn.addEventListener("click", function (event) {
-        console.log("play");
-        player.playVideo();
-      });
-
-      var pauseBtn = document.getElementById("pauseBtn");
-      pauseBtn.addEventListener("click", function (event) {
-        console.log("pause");
-        player.pauseVideo();
-      });
+    </script>
+    <!-- Current year display on ID year -->
+    <script>
+      document
+        .getElementById("year")
+        .appendChild(document.createTextNode(new Date().getFullYear()));
     </script>
   </body>
 </html>
